@@ -11,43 +11,69 @@
       background: linear-gradient(135deg, #000000, #8B0000);
       color: white;
       overflow-x: hidden;
-      position: relative;
     }
-    @keyframes flash {0%,100%{opacity:0;}50%{opacity:1;}}
-    .lightning {position:absolute; top:0; left:0; width:100%; height:100%; background:white; opacity:0; pointer-events:none; animation:flash 2s infinite; mix-blend-mode: screen;}
-    .marquee {width:100%; white-space:nowrap; overflow:hidden; box-sizing:border-box; position:relative; background: rgba(0,0,0,0.3); border-bottom: 2px solid #ff0000;}
-    .marquee span {display:inline-block; padding-left:100%; animation:marquee 15s linear infinite; font-size:30px; font-weight:bold; color:#ff6347;}
+    .marquee {
+      width:100%;
+      white-space:nowrap;
+      overflow:hidden;
+      box-sizing:border-box;
+      position:relative;
+      background: rgba(0,0,0,0.3);
+      border-bottom: 2px solid #ff0000;
+      text-align:center;
+    }
+    .marquee span {
+      display:inline-block;
+      padding-left:100%;
+      animation:marquee 15s linear infinite;
+      font-size:30px;
+      font-weight:bold;
+      color:#ff6347;
+    }
     @keyframes marquee {0%{transform:translateX(0%);}100%{transform:translateX(-100%);}}
-    .produk-container {display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:20px; padding:50px; position:relative; z-index:1;}
-    .produk-card {background: rgba(255,255,255,0.05); border:1px solid #ff0000; border-radius:15px; padding:20px; text-align:center; position:relative; transition: transform 0.3s;}
+    
+    .play-music-btn {
+      display:block;
+      width:90%;
+      max-width:400px;
+      margin:20px auto;
+      padding:15px 0;
+      font-size:18px;
+      font-weight:bold;
+      color:white;
+      background: linear-gradient(45deg,#0000ff,#00bfff);
+      border:none;
+      border-radius:12px;
+      cursor:pointer;
+      text-align:center;
+      transition: all 0.3s ease;
+    }
+    .play-music-btn:hover {
+      opacity:0.8;
+    }
+
+    .produk-container {display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:20px; padding:20px;}
+    .produk-card {background: rgba(255,255,255,0.05); border:1px solid #ff0000; border-radius:15px; padding:20px; text-align:center; transition: transform 0.3s;}
     .produk-card:hover{ transform: scale(1.05); }
     .produk-card h2 { margin-bottom:10px; }
     .produk-card p { margin-bottom:5px; }
     .produk-card .harga { font-weight:bold; margin-bottom:15px; color:#ff6347; }
-    .produk-card button {background: linear-gradient(45deg,#0000ff,#00bfff); border:none; color:white; padding:12px 25px; font-size:16px; border-radius:10px; cursor:pointer; position:relative; overflow:hidden; z-index:0; transition: all 0.3s ease; margin-top:5px;}
-    .produk-card button::before {content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%; background: repeating-linear-gradient(45deg, rgba(0,191,255,0.3), rgba(0,191,255,0.3) 2px, transparent 2px, transparent 4px); transform:rotate(25deg); transition: all 0.5s ease; z-index:-1;}
-    .produk-card button:hover::before { animation: petir 0.3s infinite; }
-    @keyframes petir {0%{transform:translateX(0) rotate(25deg);}50%{transform:translateX(20px) rotate(25deg);}100%{transform:translateX(0) rotate(25deg);}}
+    .produk-card button {background: linear-gradient(45deg,#0000ff,#00bfff); border:none; color:white; padding:12px 25px; font-size:16px; border-radius:10px; cursor:pointer; margin-top:5px; transition: all 0.3s ease; width:100%;}
     .payment-dana { text-align:center; margin:20px; font-size:20px; font-weight:bold; }
-    .qris { text-align:center; margin:20px; font-size:18px; }
-    .qris button { margin-top:10px; background: linear-gradient(45deg,#0000ff,#00bfff); border:none; color:white; padding:12px 25px; font-size:16px; border-radius:10px; cursor:pointer; position:relative; overflow:hidden; }
-    .qris button::before { content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%; background: repeating-linear-gradient(45deg, rgba(0,191,255,0.3), rgba(0,191,255,0.3) 2px, transparent 2px, transparent 4px); transform:rotate(25deg); transition: all 0.5s ease; z-index:-1; }
-    .qris button:hover::before { animation: petir 0.3s infinite; }
-    .testimoni { padding:50px 20px; text-align:center; }
-    .testimoni button { margin-top:20px; padding:15px 30px; font-size:16px; color:white; border:none; border-radius:10px; cursor:pointer; background: linear-gradient(45deg,#0000ff,#00bfff); position:relative; overflow:hidden; }
-    .testimoni button::before { content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%; background: repeating-linear-gradient(45deg, rgba(0,191,255,0.3), rgba(0,191,255,0.3) 2px, transparent 2px, transparent 4px); transform:rotate(25deg); transition: all 0.5s ease; z-index:-1; }
-    .testimoni button:hover::before { animation: petir 0.3s infinite; }
-    .join-grup { text-align:center; padding:50px 20px; font-size:18px; }
-    .join-grup button { margin-top:10px; background: linear-gradient(45deg,#0000ff,#00bfff); border:none; color:white; padding:12px 25px; font-size:16px; border-radius:10px; cursor:pointer; position:relative; overflow:hidden; }
-    .join-grup button::before { content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%; background: repeating-linear-gradient(45deg, rgba(0,191,255,0.3), rgba(0,191,255,0.3) 2px, transparent 2px, transparent 4px); transform:rotate(25deg); transition: all 0.5s ease; z-index:-1; }
-    .join-grup button:hover::before { animation: petir 0.3s infinite; }
-    audio { display:none; }
+    .qris, .testimoni, .join-grup { text-align:center; margin:20px; }
+    .qris button, .testimoni button, .join-grup button {width:90%; max-width:400px; padding:15px 0; font-size:16px; border-radius:12px; background: linear-gradient(45deg,#0000ff,#00bfff); border:none; color:white; cursor:pointer; margin-top:10px;}
+    .qris button:hover, .testimoni button:hover, .join-grup button:hover {opacity:0.8;}
   </style>
 </head>
 <body>
 
-  <div class="lightning"></div>
   <div class="marquee"><span>ACEL OFFICIAL</span></div>
+
+  <button class="play-music-btn" onclick="document.getElementById('mus').play()">PLAY MUSIC</button>
+  <audio id="mus" loop>
+    <source src="TikSave.io_7496683541594459399.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
   <div class="produk-container">
     <!-- PRODUK 1 SURXR4T -->
@@ -119,10 +145,5 @@
     <button onclick="window.location.href='https://chat.whatsapp.com/HU20E0tQN40BbZxDoqKhep?mode=ac_t'">Masuk Grup WhatsApp</button>
   </div>
 
-  <!-- AUDIO -->
-  <audio autoplay loop>
-    <source src="TikSave.io_7496683541594459399.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
 </body>
-    </html>
+</html>
